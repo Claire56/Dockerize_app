@@ -8,8 +8,11 @@ app= Flask(__name__)
 def homepage():
 
 	return """
-  <h1>Python Flask in Docker!</h1>
-  <p>A sample web-app for running Flask inside Docker.</p>
+	<div> <center>
+    <h1 > Well come to Claire_codes Docker Demo!</h1>
+    <h3>Python Flask in Docker!</h3>
+    <p> This is a sample web-app for running Flask inside Docker.</p>
+   </center> </div>
   """
 
 
