@@ -1,4 +1,7 @@
-# Dockerize a Simple Flask app
+# Dockerize a simple Flask app
+Docker is a great tool for building microservices, allowing you to create cloud-based applications and systems. To make the most of it via your terminal.
+Here I will be dockerising a simple flask app
+
 ## Dockerfile
 This defines instructions used to build a docker image, details of the dockerfile for this project is found in the <a href="/Dockerfile"> Dockerfile </a>
 
@@ -43,6 +46,14 @@ $docker run --name flaskapp -v$PWD/app:/app -p5000:5000 docker-flask:trial
 
 
 ### Using Ngnix and uwing to run app
+First I created the <a href="/ngnix.conf"> Ngnix configuration file </a>
+I also created a <a href="/ngnix.conf"> laucher script </a> to add to the CMD command
+<br>
 $ docker run -d --name flaskapp --restart=always -p 80:80 docker-flask:trial
 
+### Explanation 
+1. The d flag
+2. --restart 
+3. --name
+4. -p 
 
