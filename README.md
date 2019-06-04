@@ -15,11 +15,12 @@ In this project we install python3 and pip. We then use pip in the second RUN co
 
 * COPY - copies files/directories from the host machine to the container during the build process. 
 
-* WORKDIR - sets the working directory in the container 
+* WORKDIR - sets the working directory 
 
-* ENTRYPOINT - Defines the entry point of the application, in our case its python3. it sets or overwrite the default entrypoint command for the image. The entrypoint sets the command and parameters that will be executed first when a container is run. Any commands and arguments passed at the end of the docker run command will be appended to the entrypoint. 
+* ENTRYPOINT - Defines the entry point of the application, this makes the container executable. in our case its python3. 
 
-* CMD - Runs the app.py file in the app directory.
+* CMD - you put the file you need run after the entry point.
+I like to think of ENTRYPOINT and CMD as the duo that executes the app. => terminal vesrion is  '$python3 app.py'
 
 
 ## Build the Image
@@ -53,7 +54,17 @@ $ docker run -d --name flaskapp --restart=always -p 80:80 docker-flask:trial
 
 ### Explanation 
 1. The d flag
-2. --restart 
-3. --name
-4. -p 
+2. --restart will restart always
+3. --name the name of conntainer 
+4. -p maps port of container to host
+
+##### Delete container 
+$ docker stop flaskapp && docker rm flaskapp
+
+## Resources
+1. https://stackabuse.com/dockerizing-python-applications/
+
+2. https://nickjanetakis.com/blog/docker-tip-2-the-difference-between-copy-and-add-in-a-dockerile
+
+3. https://medium.com/the-code-review/top-10-docker-commands-you-cant-live-without-54fb6377f481
 
